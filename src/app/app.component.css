@@ -1,0 +1,54 @@
+.headerInformation {
+    color: deeppink;
+    font-style: italic;
+}
+
+
+.menuItem {
+    color: brown;
+    float: left;
+    padding: 14px;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+}
+
+.menuOutline {
+    list-style-type: none;
+    background-color: blue;
+    overflow: hidden;
+    border-radius: 10px 0px 0px;
+    margin-block: 0px;
+}
+
+.title {
+    text-align: center;
+    color: brown;
+    font-size: xx-large;
+    font-style: italic;
+}
+
+.content {
+    border: 1px solid red;
+    padding: 20px
+}
+
+.div {
+    color: blanchedalmond;
+    font-style: italic
+}
+
+.butn {
+    background-color: blue;
+    color: bisque;
+    height: 35px;
+    width: 100px;
+    font-weight: bold;
+}
+
+.input {
+    height: 35px;
+    width: 250px;
+    border-radius: 15px;
+
+}

@@ -1,0 +1,68 @@
+<div class="card componentStyle">
+    <div style="margin: 1rem;">
+        <h2>Shipping Details</h2>
+        <hr>
+        <div class="row">
+            <div class="col-6">
+                <form #f="ngForm">
+                    <div class="mb-3">
+                        <input #name="ngModel" placeholder="Name" name="name" [(ngModel)]="shipping.name" type="text"
+                            class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <input #mobileNumber="ngModel" name="mobileNumber" [(ngModel)]="shipping.mobileNumber"
+                            type="number" class="form-control" placeholder="mobileNumber" required>
+                    </div>
+                    <div class="mb-3">
+                        <input #landMark="ngModel" name="landMark" [(ngModel)]="shipping.landMark" type="text"
+                            class="form-control" placeholder="landMark" required>
+                    </div>
+                    <div class="mb-3">
+                        <input placeholder="City" #city="ngModel" name="city" [(ngModel)]="shipping.city" type="text"
+                            class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <input villageName="ngModel" name="villageName" [(ngModel)]="shipping.villageName" type="text"
+                            class="form-control" placeholder="village name" required>
+                    </div>
+                    <div class="mb-3">
+                        <input mandalName="ngModel" name="mandalName" [(ngModel)]="shipping.mandalName" type="text"
+                            class="form-control" placeholder="mandal name" required>
+                    </div>
+                    <div class="mb-3">
+                        <input pinCode="ngModel" name="pinCode" [(ngModel)]="shipping.pinCode" type="text"
+                            placeholder="pinCode" class="form-control" required>
+                    </div>
+                    <hr>
+                    <div class="mt-6">
+                        <button (click)="placeOrder()" [disabled]="!f.valid" class="btn btn-primary"><i
+                                class="bi bi-cart-check-fill"></i> Place
+                            Order</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Order Summary</h4>
+                        <p class="card-text">You have {{ totalItemsCount }} items in your shopping cart.</p>
+                        <ul class="list-group list-group-flush">
+                            <li *ngFor="let item of _cartItems" class="list-group-item">
+                                {{ item.quantity }} x {{ item.title }}
+                                <div class="float-end">
+                                    {{ item.totalPrice | currency:'INR':'symbol' }}
+                                </div>
+                            </li>
+                            <li class="list-group-item fw-bold">
+                                Total
+                                <div class="float-end">
+                                    {{ totalPrice | currency:'INR':'symbol' }}
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
